@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   check_syntax.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odahriz <odahriz@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:47:53 by odahriz           #+#    #+#             */
-/*   Updated: 2025/04/10 13:30:43 by odahriz          ###   ########.fr       */
+/*   Created: 2025/04/10 12:55:05 by odahriz           #+#    #+#             */
+/*   Updated: 2025/04/10 13:30:24 by odahriz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
 int checksyntax(char *line)
 {
 	int i = 0;
@@ -44,25 +45,4 @@ int checksyntax(char *line)
 		}
 	}
 	return	(0);
-}
-
-int main(int ac, char **av)
-{
-	(void)ac;
-	(void)av;
-	char *line;
-	//char **args;
-	
-	while(1)
-	{
-		line = readline("minishell> ");
-		if(!line)
-		{
-			printf("exit\n");
-			break;
-		}
-		checksyntax(line);
-		add_history(line);
-	}
-	return (0);
 }
